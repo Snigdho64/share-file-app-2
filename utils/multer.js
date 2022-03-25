@@ -9,13 +9,13 @@ const storage = multer.diskStorage({
             file.originalname
         cb(null, filename)
     },
-    destination: (req, file, cb) => {
-        const dir = path.join(__dirname, '..', 'uploads')
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true })
-        }
-        cb(null, dir)
-    },
+    // destination: (req, file, cb) => {
+    //     const dir = path.join(__dirname, '..', 'uploads')
+    //     if (!fs.existsSync(dir)) {
+    //         fs.mkdirSync(dir, { recursive: true })
+    //     }
+    //     cb(null, dir)
+    // },
 })
 
 const fileFilter = (req, file, cb) => {
